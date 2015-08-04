@@ -32,16 +32,16 @@ describe( 'matrix mean', function tests() {
 		d2,
 		i;
 
-	d1 = new Int16Array( 25 );
-	d2 = new Int16Array( 25 );
+	d1 = new Float64Array( 25 );
+	d2 = new Float64Array( 25 );
 	for ( i = 0; i < d1.length; i++ ) {
-		d1[ i ] = i + 1;
-		d2[ i ] = MEAN( i + 1 );
+		d1[ i ] = i / 25;
+		d2[ i ] = MEAN( i / 25 );
 	}
 
 	beforeEach( function before() {
-		mat = matrix( d1, [5,5], 'int16' );
-		out = matrix( d2, [5,5], 'int16' );
+		mat = matrix( d1, [5,5], 'float64' );
+		out = matrix( d2, [5,5], 'float64' );
 	});
 
 	it( 'should export a function', function test() {
@@ -58,7 +58,7 @@ describe( 'matrix mean', function tests() {
 	it( 'should compute the distribution mean for each matrix element', function test() {
 		var actual;
 
-		actual = matrix( [5,5], 'int16' );
+		actual = matrix( [5,5], 'float64' );
 		actual = mean( actual, mat );
 
 		assert.deepEqual( actual.data, out.data );

@@ -6,12 +6,12 @@ Mean
 
 The [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution) random variable is
 
-<div class="equation" align="center" data-raw-text="\mathbb{E}\left[ X \right] = " data-equation="eq:expectation">
+<div class="equation" align="center" data-raw-text="\mathbb{E}\left[ X \right] = \frac{1}{p}" data-equation="eq:expectation">
 	<img src="" alt="Expected value for a Geometric distribution.">
 	<br>
 </div>
 
-where `p` is the success probability.
+where `0 <= p <= 1` is the success probability.
 
 
 ## Installation
@@ -175,7 +175,7 @@ bool = ( mat === out );
 
 ## Notes
 
-*	If an element is __not__ a positive number, the [expected value](https://en.wikipedia.org/wiki/Expected_value) is `NaN`.
+*	If an element is __not__ a number in the interval [0,1], the [expected value](https://en.wikipedia.org/wiki/Expected_value) is `NaN`.
 
 	``` javascript
 	var p, out;
@@ -183,7 +183,7 @@ bool = ( mat === out );
 	out = mean( -1 );
 	// returns NaN
 
-	out = mean( 0 );
+	out = mean( 2 );
 	// returns NaN
 
 	out = mean( null );
@@ -251,7 +251,7 @@ var p,
 // Plain arrays...
 p = new Array( 10 );
 for ( i = 0; i < p.length; i++ ) {
-	p[ i ] = i;
+	p[ i ] = i / 10;
 }
 out = mean( p );
 
@@ -282,7 +282,7 @@ out = mean( p, {
 // Typed arrays...
 p = new Int32Array( 10 );
 for ( i = 0; i < p.length; i++ ) {
-	p[ i ] = i
+	p[ i ] = i / 10;
 }
 out = mean( p );
 

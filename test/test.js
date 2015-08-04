@@ -262,15 +262,15 @@ describe( 'compute-mean', function tests() {
 			d3,
 			i;
 
-		d1 = new Int16Array( 25 );
+		d1 = new Float64Array( 25 );
 		d2 = new Float64Array( 25 );
-		d3 = new Int16Array( 25 );
+		d3 = new Float64Array( 25 );
 		for ( i = 0; i < d1.length; i++ ) {
-			d1[ i ] = i + 1;
-			d2[ i ] = MEAN( i + 1 );
-			d3[ i ] = MEAN( i + 1 );
+			d1[ i ] = i / 25;
+			d2[ i ] = MEAN( i / 25 );
+			d3[ i ] = MEAN( i / 25 );
 		}
-		mat = matrix( d1, [5,5], 'int16' );
+		mat = matrix( d1, [5,5], 'float64' );
 		out = mean( mat );
 
 		assert.deepEqual( out.data, d2 );
@@ -290,13 +290,13 @@ describe( 'compute-mean', function tests() {
 			d2,
 			i;
 
-		d1 = new Int16Array( 25 );
+		d1 = new Float64Array( 25 );
 		d2 = new Float32Array( 25 );
 		for ( i = 0; i < d1.length; i++ ) {
-			d1[ i ] = i + 1;
-			d2[ i ] = MEAN( i + 1 );
+			d1[ i ] = i / 25;
+			d2[ i ] = MEAN( i / 25 );
 		}
-		mat = matrix( d1, [5,5], 'int16' );
+		mat = matrix( d1, [5,5], 'float64' );
 		out = mean( mat, {
 			'dtype': 'float32'
 		});
