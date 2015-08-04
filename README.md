@@ -7,7 +7,7 @@ Mean
 The [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="\mathbb{E}\left[ X \right] = \frac{1}{p}" data-equation="eq:expectation">
-	<img src="" alt="Expected value for a Geometric distribution.">
+	<img src="https://cdn.rawgit.com/distributions-io/geometric-mean/ef9b6f80d5c1591bf1aaf88bc8debebf630fee7e/docs/img/eqn.svg" alt="Expected value for a Geometric distribution.">
 	<br>
 </div>
 
