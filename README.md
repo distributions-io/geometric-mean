@@ -11,7 +11,7 @@ The [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [Geomet
 	<br>
 </div>
 
-where `0 <= p <= 1` is the success probability. The random variables `X` denotes the number of failures until the first success in a sequence of independent Bernoulli trials.
+where `0 <= p <= 1` is the success probability. The random variable `X` denotes the number of failures until the first success in a sequence of independent Bernoulli trials.
 
 
 ## Installation
@@ -35,33 +35,34 @@ Computes the [expected value](https://en.wikipedia.org/wiki/Expected_value) for 
 
 ``` javascript
 var matrix = require( 'dstructs-matrix' ),
-	data,
+	p,
 	mat,
 	out,
 	i;
 
 out = mean( 0.2 );
-// returns 5
+// returns 4
 
 p = [ 0.2, 0.4, 0.8, 1 ];
 out = mean( p );
-// returns [ 5, 2.5, 1.25, 1 ]
+// returns [ 4, 1.5, 0.25, 0 ]
 
-p = new Float32ArrayArray( p );
+p = new Float32Array( p );
 out = mean( p );
-// returns Float64Array( [5,2.5,1.25,1] )
+// returns Float64Array( [4,1.5,0.25,0] )
 
 p =  matrix( [ 0.2, 0.4, 0.8, 1 ], [2,2] );
 /*
-	[ 0.2, 0.4,
-	  0.8, 1 ]
+	[ 0.2 0.4
+	  0.8 1  ]
 */
 
 out = mean( p );
 /*
-	[ 5, 2.5,
-	  1.25, 1 ]
+	[ 4    1.5
+	  0.25 0 ]
 */
+
 ```
 
 The function accepts the following `options`:
@@ -89,7 +90,8 @@ function getValue( d, i ) {
 var out = mean( p, {
 	'accessor': getValue
 });
-// returns [ 5, 2.5, 1.25, 1 ]
+// returns [ 4, 1.5, 0.25, 0 ]
+
 ```
 
 To [deepset](https://github.com/kgryte/utils-deep-set) an object `array`, provide a key path and, optionally, a key path separator.
@@ -102,17 +104,18 @@ var p = [
 	{'x':[9,1]}
 ];
 
-var out = mean( p, 'x|1', '|' );
+var out = mean( p, {
+	'path': 'x|1',
+	'sep': '|'
+});
 /*
-	[
-		{'x':[9,5]},
-		{'x':[9,2.5]},
-		{'x':[9,1.25]},
-		{'x':[9,1]},
-	]
+	[ { x: [ 9, 4 ] },
+	  { x: [ 9, 1.5 ] },
+	  { x: [ 9, 0.25 ] },
+	  { x: [ 9, 0 ] } ]
 */
 
-var bool = ( data === out );
+var bool = ( p === out );
 // returns true
 ```
 
@@ -126,13 +129,14 @@ p = new Float64Array( [ 0.2,0.4,0.8,1 ] );
 out = mean( p, {
 	'dtype': 'int32'
 });
-// returns Int32Array( [ 5,2,1,1 ] )
+// returns Int32Array( [4,1,0,0] )
 
 // Works for plain arrays, as well...
 out = mean( [0.2,0.4,0.8,1], {
 	'dtype': 'int32'
 });
-// returns Int32Array( [ 5,2,1,1 ] )
+// returns Int32Array( [4,1,0,0] )
+
 ```
 
 By default, the function returns a new data structure. To mutate the input data structure (e.g., when input values can be discarded or when optimizing memory usage), set the `copy` option to `false`.
@@ -149,23 +153,23 @@ p = [ 0.2, 0.4, 0.8, 1 ];
 out = mean( p, {
 	'copy': false
 });
-// returns [ 5, 2.5, 1.25, 1 ]
+// returns [ 4, 1.5, 0.25, 0 ]
 
-bool = ( data === out );
+bool = ( p === out );
 // returns true
 
 mat = matrix( [ 0.2, 0.4, 0.8, 1 ], [2,2] );
 /*
-	[ 0.2, 0.4,
-	  0.8, 1 ]
+	[ 0.2 0.4
+	  0.8 1 ]
 */
 
 out = mean( mat, {
 	'copy': false
 });
 /*
-	[ 5, 2.5,
-	  1.25, 1 ]
+	[ 4    1.5
+	  0.25 0  ]
 */
 
 bool = ( mat === out );
