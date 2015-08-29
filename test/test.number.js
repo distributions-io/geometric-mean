@@ -28,10 +28,10 @@ describe( 'number mean', function tests() {
 	});
 
 	it( 'should compute the distribution mean', function test() {
-		assert.strictEqual( mean( 0.2 ), 5 );
-		assert.strictEqual( mean( 0.4  ), 2.5 );
-		assert.strictEqual( mean( 0.8  ), 1.25 );
-		assert.strictEqual( mean( 1  ), 1 );
+		assert.strictEqual( mean( 0.2 ), 4 );
+		assert.strictEqual( mean( 0.4  ), 1.5 );
+		assert.strictEqual( mean( 0.8  ), 0.25 );
+		assert.strictEqual( mean( 1  ), 0 );
 	});
 
 	it( 'should return for a `p` parameter outside the interval [0,1]', function test() {

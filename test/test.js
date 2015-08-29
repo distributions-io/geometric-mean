@@ -128,17 +128,17 @@ describe( 'compute-mean', function tests() {
 	});
 
 	it( 'should compute the distribution mean when provided a number', function test() {
-		assert.strictEqual( mean( 0.2 ), 5 );
-		assert.strictEqual( mean( 0.4  ), 2.5 );
-		assert.strictEqual( mean( 0.8  ), 1.25 );
-		assert.strictEqual( mean( 1  ), 1 );
+		assert.strictEqual( mean( 0.2 ), 4 );
+		assert.strictEqual( mean( 0.4  ), 1.5 );
+		assert.strictEqual( mean( 0.8  ), 0.25 );
+		assert.strictEqual( mean( 1  ), 0 );
 	});
 
 	it( 'should compute the distribution mean when provided a plain array', function test() {
 		var p, actual, expected;
 
 		p = [ 0.2, 0.4, 0.8, 1 ];
-		expected = [ 5, 2.5, 1.25, 1 ];
+		expected = [ 4, 1.5, 0.25, 0 ];
 
 		actual = mean( p );
 		assert.notEqual( actual, p );
@@ -156,7 +156,7 @@ describe( 'compute-mean', function tests() {
 		var p, actual, expected;
 
 		p = new Float64Array ( [ 0.2,0.4,0.8,1 ] );
-		expected = new Float64Array( [ 5,2.5,1.25,1 ] );
+		expected = new Float64Array( [ 4, 1.5, 0.25, 0 ] );
 
 		actual = mean( p );
 		assert.notEqual( actual, p );
@@ -166,7 +166,7 @@ describe( 'compute-mean', function tests() {
 		actual = mean( p, {
 			'copy': false
 		});
-		expected = new Float64Array( [ 5,2.5,1.25,1 ] );
+		expected = new Float64Array( [ 4, 1.5, 0.25, 0 ] );
 		assert.strictEqual( actual, p );
 		assert.deepEqual( p, expected );
 	});
@@ -175,7 +175,7 @@ describe( 'compute-mean', function tests() {
 		var p, actual, expected;
 
 		p = [ 0.2, 0.4, 0.8, 1 ];
-		expected = new Int32Array( [ 5,2.5,1.25,1 ] );
+		expected = new Int32Array( [ 4, 1.5, 0.25, 0 ] );
 
 		actual = mean( p, {
 			'dtype': 'int32'
@@ -194,7 +194,7 @@ describe( 'compute-mean', function tests() {
 			{'p':0.8},
 			{'p':1}
 		];
-		expected = [ 5, 2.5, 1.25, 1 ];
+		expected = [ 4, 1.5, 0.25, 0 ];
 
 		actual = mean( p, {
 			'accessor': getValue
@@ -226,10 +226,10 @@ describe( 'compute-mean', function tests() {
 		];
 
 		expected = [
-			{'x':[9,5]},
-			{'x':[9,2.5]},
-			{'x':[9,1.25]},
-			{'x':[9,1]}
+			{'x':[9,4]},
+			{'x':[9,1.5]},
+			{'x':[9,0.25]},
+			{'x':[9,0]}
 		];
 
 		actual = mean( data, {

@@ -36,10 +36,10 @@ describe( 'deepset mean', function tests() {
 
 		data = mean( data, 'x' );
 		expected = [
-			{'x':5},
-			{'x':2.5},
-			{'x':1.25},
-			{'x':1}
+			{'x':4},
+			{'x':1.5},
+			{'x':0.25},
+			{'x':0}
 		];
 
 		assert.deepEqual( data, expected );
@@ -54,10 +54,10 @@ describe( 'deepset mean', function tests() {
 
 		data = mean( data, 'x/1', '/' );
 		expected = [
-			{'x':[9,5]},
-			{'x':[9,2.5]},
-			{'x':[9,1.25]},
-			{'x':[9,1]}
+			{'x':[9,4]},
+			{'x':[9,1.5]},
+			{'x':[9,0.25]},
+			{'x':[9,0]}
 		];
 
 		assert.deepEqual( data, expected, 'custom separator' );

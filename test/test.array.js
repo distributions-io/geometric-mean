@@ -31,7 +31,7 @@ describe( 'array mean', function tests() {
 		actual = new Array( p.length );
 
 		actual = mean( actual, p );
-		expected = [ 5, 2.5, 1.25, 1 ];
+		expected = [ 4, 1.5, 0.25, 0 ];
 
 		assert.deepEqual( actual, expected );
 	});

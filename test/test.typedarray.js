@@ -31,7 +31,7 @@ describe( 'typed-array mean', function tests() {
 		actual = new Float64Array( p.length );
 
 		actual = mean( actual, p );
-		expected = new Float64Array( [ 5, 2.5, 1.25, 1 ] );
+		expected = new Float64Array( [ 4, 1.5, 0.25, 0 ] );
 
 		assert.deepEqual( actual, expected );
 	});

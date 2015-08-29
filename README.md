@@ -6,12 +6,12 @@ Mean
 
 The [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution) random variable is
 
-<div class="equation" align="center" data-raw-text="\mathbb{E}\left[ X \right] = \frac{1}{p}" data-equation="eq:expectation">
-	<img src="https://cdn.rawgit.com/distributions-io/geometric-mean/ef9b6f80d5c1591bf1aaf88bc8debebf630fee7e/docs/img/eqn.svg" alt="Expected value for a Geometric distribution.">
+<div class="equation" align="center" data-raw-text="\mathbb{E}\left[ X \right] = \frac{1-p}{p}" data-equation="eq:expectation">
+	<img src="https://cdn.rawgit.com/distributions-io/geometric-mean/b250d198a5725c076c4ef2938dd8fc525943fbb1/docs/img/eqn.svg" alt="Expected value for a Geometric distribution.">
 	<br>
 </div>
 
-where `0 <= p <= 1` is the success probability.
+where `0 <= p <= 1` is the success probability. The random variables `X` denotes the number of failures until the first success in a sequence of independent Bernoulli trials.
 
 
 ## Installation
