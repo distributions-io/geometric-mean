@@ -4,10 +4,10 @@ Mean
 
 > [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution) distribution [expected value](https://en.wikipedia.org/wiki/Expected_value).
 
-The [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution) random variable is
+The [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [geometric](https://en.wikipedia.org/wiki/Geometric_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="\mathbb{E}\left[ X \right] = \frac{1-p}{p}" data-equation="eq:expectation">
-	<img src="https://cdn.rawgit.com/distributions-io/geometric-mean/b250d198a5725c076c4ef2938dd8fc525943fbb1/docs/img/eqn.svg" alt="Expected value for a Geometric distribution.">
+	<img src="https://cdn.rawgit.com/distributions-io/geometric-mean/b250d198a5725c076c4ef2938dd8fc525943fbb1/docs/img/eqn.svg" alt="Expected value for a geometric distribution.">
 	<br>
 </div>
 
@@ -31,7 +31,7 @@ var mean = require( 'distributions-geometric-mean' );
 
 #### mean( p[, opts] )
 
-Computes the [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution) distribution with parameter `p` . `p` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix).
+Computes the [expected value](https://en.wikipedia.org/wiki/Expected_value) for a [geometric](https://en.wikipedia.org/wiki/Geometric_distribution) distribution with parameter `p` . `p` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix).
 
 ``` javascript
 var matrix = require( 'dstructs-matrix' ),
